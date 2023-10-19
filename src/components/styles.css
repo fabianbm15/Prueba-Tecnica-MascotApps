@@ -1,0 +1,47 @@
+/* ************* NavBar ************* */
+.navBar {
+  border: 1px solid red;
+  height: 72px;
+}
+
+/* ************* Banner ************* */
+.banner {
+  display: flex;
+}
+#petsImageBanner {
+  width: 404px;
+  height: 349px;
+}
+
+/* ************* Info ************* */
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+#cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-gap: 40px; */
+}
+
+/* ************* Card ************* */
+#card {
+  width: 370px;
+  height: 300px;
+  border: 1px solid pink;
+}
+
+/* ************* Faq ************* */
+
+/* ************* Contact ************* */
+
+/* ************* Notifications ************* */
+
+/* ************* PromoteApp ************* */
+
+/* ************* Footer ************* */
+#footerHyperlinks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
