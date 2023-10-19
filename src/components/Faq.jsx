@@ -28,7 +28,7 @@ export default function Faq() {
         <div>
           {faqs.map((faq, key) => {
             return (
-              <div>
+              <div key={key}>
                 <h4>{faq.q}</h4>
                 {faq.show ? <p>{faq.a}</p> : <p></p>}
               </div>
