@@ -3,6 +3,7 @@ import { useState } from "react";
 import { validateContact } from "./validate";
 
 export default function Contact() {
+  const [showAlert, setShowAlert] = useState(false);
   const [contactData, setContactData] = useState({
     firstName: "",
     lastName: "",
@@ -26,6 +27,8 @@ export default function Contact() {
     message: "",
   });
 
+  const hasErrors = Object.values(errors).some((value) => value !== "");
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -43,13 +46,43 @@ export default function Contact() {
     );
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!hasErrors) {
+      document.querySelector("#contactForm").reset();
+      setShowAlert(true);
+    }
+  };
+
+  const showErrors = () => {
+    for (const key in contactData) {
+      setContactData((prevState) => ({
+        ...prevState,
+        touched: {
+          ...prevState.touched,
+          [key]: true,
+        },
+      }));
+    }
+    setErrors(
+      validateContact({
+        ...contactData,
+      })
+    );
+  };
+
   return (
     <>
       <div>
         <h2>Contacto</h2>
         <p>Siempre puedes escribirnos y consúltarnos</p>
         <div>
-          <form>
+          <form
+            id="contactForm"
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+          >
             <div>
               <div>
                 <input
@@ -108,11 +141,23 @@ export default function Contact() {
               <p>{contactData.touched.message ? errors.message : null}</p>
             </div>
             <div>
-              <button>Enviar</button>
+              <button
+                onClick={(e) => {
+                  showErrors(e);
+                }}
+              >
+                Enviar
+              </button>
             </div>
           </form>
         </div>
       </div>
+      {showAlert ? (
+        <div>
+          <p>Mensaje enviado</p>
+          <button onClick={() => setShowAlert(false)}>Cerrar</button>
+        </div>
+      ) : null}
     </>
   );
 }

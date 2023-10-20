@@ -1,5 +1,5 @@
 const regexName = /^[\p{L}\s]{1,55}$/u; // Cadena de texto con espacios, hasta 55 caractéres
-const regexEmail = /^\S+@\S+.\S+$/; // formato email
+const regexEmail = /^\S+@\S+\.\S+$/; // formato email
 const regexNumber = /^[0-9]+$/; // Números
 const regexText = /^[\p{L}\s.,;()0-9]+$/u; // Cadena de texto con espacios
 
