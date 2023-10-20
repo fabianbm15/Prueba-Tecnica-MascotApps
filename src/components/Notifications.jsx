@@ -36,13 +36,10 @@ export default function Notifications() {
         [name]: value,
       })
     );
-    console.log("errorEmail ", errorEmail);
-    console.log(hasErrorNotification);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(hasErrorNotification);
     if (!hasErrorNotification) {
       setShowAlertNotification(true);
       document.querySelector("#notificationForm").reset();

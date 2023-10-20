@@ -1,26 +1,37 @@
 import React from "react";
+import { useState } from "react";
 import "./styles.css";
 
 const faqs = [
-  { q: "¿Cuánto cuesta registrar mi máscota?", a: "100 dólares", show: false },
+  {
+    q: "¿Cuánto cuesta registrar mi máscota?",
+    a: "El registro de tu mascota es gratuito. Puedes registrarla en nuestra página web o en nuestra aplicación móvil.",
+  },
   {
     q: "¿Qué pasa si pierdo el código QR registrado de mi mascota?",
-    a: "100 dólares",
-    show: false,
+    a: "Si pierdes el código QR registrado de tu mascota, puedes solicitar uno nuevo en nuestra página web o en nuestra aplicación móvil.",
   },
   {
     q: "¿Cómo puedo editar los datos registrados de mi mascota?",
-    a: "100 dólares",
-    show: false,
+    a: "Puedes editar los datos registrados de tu mascota en nuestra página web o en nuestra aplicación móvil. Para ello, inicia sesión con tu cuenta y accede a la ficha de tu mascota.",
   },
   {
     q: "¿Cómo puedo tener soporte si tengo algún problema?",
-    a: "100 dólares",
-    show: false,
+    a: "Puedes ponerte en contacto con nuestro servicio de soporte a través de nuestro sitio web o de nuestra aplicación móvil.",
   },
 ];
 
 export default function Faq() {
+  const [currentQuestion, setCurrentQuestion] = useState(null);
+
+  const handleClick = (e) => {
+    if (currentQuestion === e.target.textContent) {
+      setCurrentQuestion(null);
+    } else {
+      setCurrentQuestion(e.target.textContent);
+    }
+  };
+
   return (
     <>
       <div>
@@ -29,8 +40,8 @@ export default function Faq() {
           {faqs.map((faq, key) => {
             return (
               <div key={key}>
-                <h4>{faq.q}</h4>
-                {faq.show ? <p>{faq.a}</p> : <p></p>}
+                <h4 onClick={(e) => handleClick(e)}>{faq.q}</h4>
+                {currentQuestion === faq.q ? <p>{faq.a}</p> : <p></p>}
               </div>
             );
           })}
