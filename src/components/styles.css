@@ -1,7 +1,53 @@
 /* ************* NavBar ************* */
 .navBar {
-  border: 1px solid red;
   height: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 83px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+
+#logoNavBar {
+  width: 138.51px;
+  height: 42;
+}
+
+#buttonsNavBar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 592px;
+}
+
+#buttonsNavBar button {
+  cursor: pointer;
+  width: 148px;
+  height: 36px;
+  font: normal normal 600 16px/24px Red Hat Display;
+}
+
+#noBackgrounButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+}
+
+#loginButton {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  color: #32a4de;
+  font: normal normal bold 16px/24px Red Hat Display;
+}
+
+#signupButton {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #32a4de;
+  border-radius: 18px;
+  opacity: 1;
+  color: #32a4de;
+  opacity: 1;
 }
 
 /* ************* Banner ************* */

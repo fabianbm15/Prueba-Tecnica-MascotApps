@@ -6,11 +6,13 @@ export default function NavBar() {
   return (
     <>
       <div className="navBar">
-        <img src={logo} alt="mascotapps.svg" />
-        <button>Cómo funciona</button>
-        <button>Contacto</button>
-        <button>Iniciar Sesión</button>
-        <button>Registrarse</button>
+        <img id="logoNavBar" src={logo} alt="mascotapps.svg" />
+        <div id="buttonsNavBar">
+          <button id="noBackgrounButton">¿Cómo funciona?</button>
+          <button id="noBackgrounButton">Contacto</button>
+          <button id="loginButton">Iniciar Sesión</button>
+          <button id="signupButton">Registrarse</button>
+        </div>
       </div>
     </>
   );
