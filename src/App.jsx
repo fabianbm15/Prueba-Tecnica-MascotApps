@@ -13,15 +13,17 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="app">
+      <div className="main">
         <NavBar />
-        <Banner />
-        <Info />
-        <Faq />
-        <Contact />
-        <Notifications />
-        <PromoteApp />
-        <Footer />
+        <div className="app">
+          <Banner />
+          <Info />
+          <Faq />
+          <Contact />
+          <Notifications />
+          <PromoteApp />
+          <Footer />
+        </div>
       </div>
     </>
   );

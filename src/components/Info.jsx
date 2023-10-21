@@ -33,7 +33,7 @@ export default function Info() {
   return (
     <>
       <div className="info">
-        <h2>¿Cómo funciona Mascotapps?</h2>
+        <h2 id="h2Info">¿Cómo funciona Mascotapps?</h2>
         <div id="cards">
           {infoCards.map((card, key) => (
             <Card

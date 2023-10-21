@@ -1,14 +1,19 @@
 /* ************* NavBar ************* */
 .navBar {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+#containerNavBar {
   height: 72px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0 83px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #00000029;
-  opacity: 1;
+  max-width: 1366px;
+  margin: auto;
 }
 
 #logoNavBar {
@@ -52,20 +57,103 @@
 
 /* ************* Banner ************* */
 .banner {
+  padding-top: 55px;
+  height: 404px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
 }
+
 #petsImageBanner {
   width: 404px;
   height: 349px;
 }
 
-/* ************* Info ************* */
-.info {
+#contentTextBanner {
+  width: 504px;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#h2Banner {
+  text-align: left;
+  font: normal normal 600 30px/24px Red Hat Display;
+  letter-spacing: 0px;
+  color: #606060;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+#h1Banner {
+  text-align: left;
+  font: normal normal bold 38px/24px Red Hat Display;
+  letter-spacing: 0px;
+  color: #32a4de;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+#bannerButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#buyIdTag {
+  width: 240px;
+  height: 48px;
+  background: #32a4de 0% 0% no-repeat padding-box;
+  border: 0px;
+  border-radius: 24px;
+  opacity: 1;
+  text-align: center;
+  font: normal normal 600 21px/20px Red Hat Display;
+  letter-spacing: 0px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#haveIdTag {
+  width: 240px;
+  height: 48px;
+  background: #0d3c54 0% 0% no-repeat padding-box;
+  border-radius: 24px;
+  border: 0px;
+  opacity: 1;
+  text-align: center;
+  font: normal normal 600 21px/20px Red Hat Display;
+  letter-spacing: 0px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ************* Info ************* */
+.info {
+  height: 528px;
+  background: #32a4de 0% 0% no-repeat padding-box;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#h2Info {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+  font: normal normal bold 36px/34px Red Hat Display;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
 }
 
 #cards {
+  width: 1200px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* grid-gap: 40px; */
@@ -73,14 +161,240 @@
 
 /* ************* Card ************* */
 #card {
+  position: relative;
   width: 370px;
   height: 300px;
-  border: 1px solid pink;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 18px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#numbersCardInfo {
+  position: absolute;
+}
+
+#circleCardNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-top: 15px;
+  margin-left: 19px;
+}
+
+#circleCardNumber img {
+  display: block;
+  margin: 0 auto;
+  filter: brightness(40%);
+}
+
+#numberCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  text-align: center;
+  font: normal normal bold 24px/34px Red Hat Display;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+#contentCardInfo {
+  padding: 48px 37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#imageContentCard {
+  height: 72px;
+}
+
+#h3ContentCard {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+  font: normal normal bold 24px/34px Red Hat Display;
+  letter-spacing: 0px;
+  color: #0d3c54;
+  opacity: 1;
+}
+
+#pContentCard {
+  margin-top: 0px;
+  text-align: center;
+  font: normal normal 600 18px/24px Red Hat Display;
+  letter-spacing: 0px;
+  color: #646464;
+  opacity: 1;
 }
 
 /* ************* Faq ************* */
+.faqs {
+  height: 556px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 82px;
+}
+
+#h2Faqs {
+  text-align: center;
+  font: normal normal bold 36px/34px Red Hat Display;
+  letter-spacing: 0px;
+  color: #0d3c54;
+  opacity: 1;
+  margin-bottom: 48px;
+}
+
+#faqQuestionAnswer {
+  width: 900px;
+  min-height: 60px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+  margin-bottom: 16px;
+  padding: 0 21px;
+  cursor: pointer;
+}
+
+#divFaqTile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#answerFaqs {
+  padding-bottom: 18px;
+}
 
 /* ************* Contact ************* */
+.contact {
+  height: 580px;
+  background: #0d3c54 0% 0% no-repeat padding-box;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 66px;
+  padding-left: 346px;
+  padding-right: 346px;
+}
+
+#h2Contact {
+  text-align: center;
+  font: normal normal bold 36px/34px Red Hat Display;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+#pContact {
+  text-align: center;
+  font: normal normal normal 18px/20px Red Hat Display;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  margin-top: -20px;
+}
+
+#divContactForm {
+  margin-top: 50px;
+  width: 675px;
+  height: 332px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 12px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 27px;
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
+#contactForm {
+  height: 100%;
+  margin-bottom: 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 624px;
+}
+
+#contactFirstLine {
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+#inputContact {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#inputContact input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  opacity: 1;
+  width: 300px;
+  height: 48px;
+}
+
+#errors {
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 38px;
+  left: 5px;
+}
+
+#divInputText {
+  width: 624px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#divInputText input {
+  height: 80px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  opacity: 1;
+}
+
+#errorsText {
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 68px;
+  left: 5px;
+}
+
+#sendContactButton {
+  width: 150px;
+  height: 48px;
+  margin-top: 25px;
+  background: #32a4de 0% 0% no-repeat padding-box;
+  border-radius: 24px;
+  opacity: 1;
+  border: 0px;
+}
 
 /* ************* Notifications ************* */
 

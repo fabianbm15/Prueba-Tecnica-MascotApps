@@ -24,24 +24,33 @@ const faqs = [
 export default function Faq() {
   const [currentQuestion, setCurrentQuestion] = useState(null);
 
-  const handleClick = (e) => {
-    if (currentQuestion === e.target.textContent) {
+  const handleClick = (q) => {
+    if (currentQuestion === q) {
       setCurrentQuestion(null);
     } else {
-      setCurrentQuestion(e.target.textContent);
+      setCurrentQuestion(q);
     }
   };
 
   return (
     <>
-      <div>
-        <h2>Preguntas Frecuentes</h2>
+      <div className="faqs">
+        <h2 id="h2Faqs">Preguntas Frecuentes</h2>
         <div>
           {faqs.map((faq, key) => {
             return (
-              <div key={key}>
-                <h4 onClick={(e) => handleClick(e)}>{faq.q}</h4>
-                {currentQuestion === faq.q ? <p>{faq.a}</p> : <p></p>}
+              <div
+                key={key}
+                id="faqQuestionAnswer"
+                onClick={() => handleClick(faq.q)}
+              >
+                <div id="divFaqTile">
+                  <h4>{faq.q}</h4>
+                  {currentQuestion === faq.q ? <p>-</p> : <p>+</p>}
+                </div>
+                {currentQuestion === faq.q ? (
+                  <p id="answerFaqs">{faq.a}</p>
+                ) : null}
               </div>
             );
           })}

@@ -73,10 +73,10 @@ export default function Contact() {
 
   return (
     <>
-      <div>
-        <h2>Contacto</h2>
-        <p>Siempre puedes escribirnos y consúltarnos</p>
-        <div>
+      <div className="contact">
+        <h2 id="h2Contact">Contacto</h2>
+        <p id="pContact">Siempre puedes escribirnos y consúltarnos</p>
+        <div id="divContactForm">
           <form
             id="contactForm"
             onSubmit={(e) => {
@@ -85,63 +85,86 @@ export default function Contact() {
           >
             <div>
               <div>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Nombre"
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                />
-                <p>{contactData.touched.firstName ? errors.firstName : null}</p>
+                <div id="contactFirstLine">
+                  <div id="inputContact">
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Nombre"
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                    />
+                    <p id="errors">
+                      {contactData.touched.firstName ? errors.firstName : null}
+                    </p>
+                  </div>
+                  <div id="inputContact">
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Apellidos"
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                    />
+                    <p id="errors">
+                      {contactData.touched.lastName ? errors.lastName : null}
+                    </p>
+                  </div>
+                </div>
 
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Apellidos"
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                />
-                <p>{contactData.touched.lastName ? errors.lastName : null}</p>
-
-                <input
-                  type="text"
-                  id="number"
-                  name="number"
-                  placeholder="Número celular"
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                />
-                <p>{contactData.touched.number ? errors.number : null}</p>
-
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="Correo electrónico"
-                  onChange={(e) => {
-                    handleChange(e);
-                  }}
-                />
-                <p>{contactData.touched.email ? errors.email : null}</p>
+                <div id="contactFirstLine">
+                  <div id="inputContact">
+                    <input
+                      type="text"
+                      id="number"
+                      name="number"
+                      placeholder="Número celular"
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                    />
+                    <p id="errors">
+                      {contactData.touched.number ? errors.number : null}
+                    </p>
+                  </div>
+                  <div id="inputContact">
+                    <input
+                      type="text"
+                      id="email"
+                      name="email"
+                      placeholder="Correo electrónico"
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                    />
+                    <p id="errors">
+                      {contactData.touched.email ? errors.email : null}
+                    </p>
+                  </div>
+                </div>
               </div>
-              <input
-                type="text"
-                id="message"
-                name="message"
-                placeholder="Mensaje"
-                onChange={(e) => {
-                  handleChange(e);
-                }}
-              />
-              <p>{contactData.touched.message ? errors.message : null}</p>
+              <div id="divInputText">
+                <input
+                  type="text"
+                  id="message"
+                  name="message"
+                  placeholder="Mensaje"
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
+                />
+                <p id="errorsText">
+                  {contactData.touched.message ? errors.message : null}
+                </p>
+              </div>
             </div>
             <div>
               <button
+                id="sendContactButton"
                 onClick={(e) => {
                   showErrors(e);
                 }}
