@@ -32,7 +32,7 @@ export default function Contact() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
+    console.log(errors);
     setContactData((prevState) => ({
       ...prevState,
       [name]: value,
@@ -52,6 +52,20 @@ export default function Contact() {
     if (!hasErrors) {
       document.querySelector("#contactForm").reset();
       setShowAlert(true);
+      setContactData({
+        firstName: "",
+        lastName: "",
+        number: "",
+        email: "",
+        message: "",
+        touched: {
+          firstName: false,
+          lastName: false,
+          number: false,
+          email: false,
+          message: false,
+        },
+      });
     }
   };
 

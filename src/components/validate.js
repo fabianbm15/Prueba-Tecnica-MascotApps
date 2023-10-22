@@ -1,4 +1,4 @@
-const regexName = /^[\p{L}\s]{1,55}$/u; // Cadena de texto con espacios, hasta 55 caractéres
+const regexName = /^[\p{L}\s]+$/u; // Cadena de texto con espacios, hasta 55 caractéres
 const regexEmail = /^\S+@\S+\.\S+$/; // formato email
 const regexNumber = /^[0-9]+$/; // Números
 const regexText = /^[\p{L}\s.,;()0-9]+$/u; // Cadena de texto con espacios
@@ -43,6 +43,22 @@ export function validateContact(inputs) {
     errors.number = "El número de teléfono no puede estar vacío.";
   } else if (!regexNumber.test(inputs.number)) {
     errors.number = "El número de teléfono solo puede contener números.";
+  } else if (inputs.number.length < 2 || inputs.number.length > 20) {
+    errors.number = "El número debe tener entre 2 y 20 caracteres.";
+  }
+
+  return errors;
+}
+
+export function validateEmail(inputs) {
+  const errors = {};
+
+  if (!inputs.email) {
+    errors.email = "El correo electrónico no puede estar vacío.";
+  } else if (!regexEmail.test(inputs.email)) {
+    errors.email = "Formato de correo electrónico inválido.";
+  } else if (inputs.email.length > 254) {
+    errors.email = "El E-Mail no puede tener más de 254 caracteres.";
   }
 
   return errors;

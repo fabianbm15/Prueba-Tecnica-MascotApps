@@ -230,7 +230,7 @@
 
 /* ************* Faq ************* */
 .faqs {
-  height: 474px;
+  min-height: 474px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -392,6 +392,7 @@
   font: normal normal 600 21px/20px Red Hat Display;
   letter-spacing: 0px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 #backgroundAlert {
@@ -404,6 +405,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 
 #alertSubmit {
@@ -785,6 +787,13 @@
   }
   #divTitleNotifications {
     width: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #divTitleNotifications img {
+    width: 33px;
+    height: 27px;
   }
   #notificationForm input {
     width: 300px;
@@ -850,16 +859,6 @@
   #inputContact input {
     padding: 0 5px;
     width: none;
-  }
-
-  #divTitleNotifications {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  #divTitleNotifications img {
-    width: 33px;
-    height: 27px;
   }
   #notificationForm input {
     width: 240px;

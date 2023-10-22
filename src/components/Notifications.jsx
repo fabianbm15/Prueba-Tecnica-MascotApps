@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import mailIcon from "../assets/mail_icon.svg";
-import { validateContact } from "./validate";
+import { validateEmail } from "./validate";
 import playStore from "../assets/playstore.svg";
 import appStore from "../assets/appstore.svg";
 import "./style.css";
@@ -21,12 +21,11 @@ export default function Notifications() {
   });
 
   const hasErrorNotification = Object.values(errorEmail).some(
-    (value) => value === "email" && value !== ""
+    (value) => value !== ""
   );
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setEmailContact((prevState) => ({
       ...prevState,
       [name]: value,
@@ -34,7 +33,7 @@ export default function Notifications() {
     }));
 
     setErrorEmail(
-      validateContact({
+      validateEmail({
         ...emailContact,
         [name]: value,
       })
@@ -44,8 +43,15 @@ export default function Notifications() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!hasErrorNotification) {
-      setShowAlertNotification(true);
       document.querySelector("#notificationForm").reset();
+      setShowAlertNotification(true);
+
+      setEmailContact({
+        email: "",
+        touched: {
+          email: false,
+        },
+      });
     }
   };
 
@@ -60,7 +66,7 @@ export default function Notifications() {
       }));
     }
     setErrorEmail(
-      validateContact({
+      validateEmail({
         ...emailContact,
       })
     );
