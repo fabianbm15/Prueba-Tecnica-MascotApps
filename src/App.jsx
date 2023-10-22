@@ -21,7 +21,7 @@ function App() {
           <Faq />
           <Contact />
           <Notifications />
-          <PromoteApp />
+          {/* <PromoteApp /> */}
           <Footer />
         </div>
       </div>

@@ -5,9 +5,9 @@ import appStore from "../assets/appstore.svg";
 export default function PromoteApp() {
   return (
     <>
-      <div>
+      <div className="promoteApp">
         <h3>Próximamente en</h3>
-        <div>
+        <div id="divLogosApps">
           <img src={playStore} alt="googleplay.svg" />
           <img src={appStore} alt="appstore.svg" />
         </div>

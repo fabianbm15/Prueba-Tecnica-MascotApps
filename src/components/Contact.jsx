@@ -148,7 +148,7 @@ export default function Contact() {
                 </div>
               </div>
               <div id="divInputText">
-                <input
+                <textarea
                   type="text"
                   id="message"
                   name="message"
@@ -174,13 +174,24 @@ export default function Contact() {
             </div>
           </form>
         </div>
+        {showAlert ? (
+          <div id="backgroundAlert">
+            <div id="alertSubmit">
+              <p id="pTitleAlertt">¡Mensaje enviado correctamente!</p>
+              <p id="pInfoContact">
+                En los próximos días será contactado por uno de nuestros
+                asesores por medio del correo electrónico.
+              </p>
+              <button
+                id="closeButtonContact"
+                onClick={() => setShowAlert(false)}
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        ) : null}
       </div>
-      {showAlert ? (
-        <div>
-          <p>Mensaje enviado</p>
-          <button onClick={() => setShowAlert(false)}>Cerrar</button>
-        </div>
-      ) : null}
     </>
   );
 }
