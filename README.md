@@ -13,7 +13,7 @@ Este es el proyecto Mascotapps, una aplicación desarrollada con [React](https:/
 2. **Navega hasta el directorio del proyecto:**
 
    ```
-   cd Mascotapps
+   cd practical_test_fabian_melgarejo
    ```
 
 3. **Instala las dependencias:**
