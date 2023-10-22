@@ -3,7 +3,7 @@ import Card from "./Card";
 import info1Image from "../assets/info1_qr.svg";
 import info2Image from "../assets/info2_register.svg";
 import info3Image from "../assets/info3_use.svg";
-import "./styles.css";
+import "./style.css";
 
 const infoCards = [
   {

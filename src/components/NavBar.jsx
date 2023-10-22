@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/logo.svg";
 import { animateScroll } from "react-scroll";
-import "./styles.css";
+import "./style.css";
 
 export default function NavBar() {
   const scrollToInfo = () => {

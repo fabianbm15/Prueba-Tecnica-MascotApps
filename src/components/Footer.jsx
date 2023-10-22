@@ -4,7 +4,7 @@ import twitterImage from "../assets/twitter.svg";
 import facebookImage from "../assets/facebook.svg";
 import instagramImage from "../assets/instagram.svg";
 import { animateScroll } from "react-scroll";
-import "./styles.css";
+import "./style.css";
 
 export default function Footer() {
   const scrollToHome = () => {

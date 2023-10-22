@@ -4,7 +4,7 @@ import mailIcon from "../assets/mail_icon.svg";
 import { validateContact } from "./validate";
 import playStore from "../assets/playstore.svg";
 import appStore from "../assets/appstore.svg";
-import "./styles.css";
+import "./style.css";
 
 export default function Notifications() {
   const [showAlertNotification, setShowAlertNotification] = useState(false);

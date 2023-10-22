@@ -5,7 +5,6 @@ import Info from "./components/Info";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Notifications from "./components/Notifications";
-import PromoteApp from "./components/PromoteApp";
 import Footer from "./components/Footer";
 
 import "./App.css";
@@ -21,7 +20,6 @@ function App() {
           <Faq />
           <Contact />
           <Notifications />
-          {/* <PromoteApp /> */}
           <Footer />
         </div>
       </div>

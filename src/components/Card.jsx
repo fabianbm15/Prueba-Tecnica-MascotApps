@@ -1,6 +1,6 @@
 import React from "react";
 import backgroundNumber from "../assets/background_number.svg";
-import "./styles.css";
+import "./style.css";
 
 export default function Card(props) {
   const { number, image, title, content } = props;

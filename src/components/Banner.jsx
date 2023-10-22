@@ -1,7 +1,7 @@
 import React from "react";
 import pets from "../assets/pets.png";
 import pets2x from "../assets/pets@2x.png";
-import "./styles.css";
+import "./style.css";
 
 export default function Banner() {
   return (

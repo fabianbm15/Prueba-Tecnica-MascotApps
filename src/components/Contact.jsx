@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { validateContact } from "./validate";
+import "./style.css";
 
 export default function Contact() {
   const [showAlert, setShowAlert] = useState(false);
