@@ -748,6 +748,10 @@
   #menuMobile {
     border-top: 1px solid rgba(134, 134, 134, 0.363);
   }
+  #menuMobile button {
+    width: auto;
+    min-width: 250px;
+  }
   .banner {
     flex-direction: column-reverse;
     padding-top: 0px;
@@ -812,6 +816,10 @@
   #divInputText {
     width: 100%;
   }
+  .notificationsAndPromoteApp {
+    height: auto;
+    min-height: 400px;
+  }
   .notifications {
     padding: 0px 10px;
   }
@@ -827,6 +835,9 @@
   }
   #notificationForm input {
     width: 300px;
+  }
+  .promoteApp {
+    margin-top: 0px;
   }
   #footerHyperlinks {
     padding: 40px 10px;
