@@ -36,7 +36,7 @@ export default function Faq() {
     <>
       <div className="faqs">
         <h2 id="h2Faqs">Preguntas Frecuentes</h2>
-        <div>
+        <div id="divfaqQuestionAnswer">
           {faqs.map((faq, key) => {
             return (
               <div
