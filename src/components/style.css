@@ -5,7 +5,7 @@
 }
 
 #containerNavBar {
-  height: 72px;
+  min-height: 72px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -51,6 +51,34 @@
   border: 1px solid #32a4de;
   border-radius: 18px;
   color: #32a4de;
+}
+
+.navBarMobile {
+  display: none;
+}
+
+#imageNavBarMobile {
+  width: 40px;
+  cursor: pointer;
+  filter: contrast(40%);
+}
+
+#menuMobile {
+  min-width: 100px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0px;
+}
+
+#menuMobile button {
+  margin: auto;
+  cursor: pointer;
+  width: 148px;
+  height: 36px;
+  font: normal normal 600 16px/24px Red Hat Display;
 }
 
 /* ************* Banner ************* */
@@ -705,18 +733,20 @@
 
 @media screen and (max-width: 768px) {
   #containerNavBar {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 10px;
+    padding: 30px 10px;
     padding-top: 30px;
+    justify-content: space-around;
+    height: auto;
   }
   #buttonsNavBar {
-    width: 100%;
-    margin-top: 10px;
+    display: none;
   }
-  #buttonsNavBar button {
-    width: 100%;
-    height: 60px;
+
+  .navBarMobile {
+    display: flex;
+  }
+  #menuMobile {
+    border-top: 1px solid rgba(134, 134, 134, 0.363);
   }
   .banner {
     flex-direction: column-reverse;
