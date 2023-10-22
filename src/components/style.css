@@ -64,8 +64,8 @@
 }
 
 #menuMobile {
-  min-width: 100px;
-  height: 180px;
+  min-width: 300px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -865,6 +865,9 @@
 }
 
 @media screen and (max-width: 375px) {
+  #menuMobile {
+    min-width: 200px;
+  }
   #petsImageBanner {
     width: 70%;
   }
