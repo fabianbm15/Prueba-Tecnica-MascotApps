@@ -7,7 +7,7 @@ Este es el proyecto Mascotapps, una aplicación desarrollada con [React](https:/
 1. **Clona el repositorio:**
 
    ```
-   git clone <https://github.com/fabianbm15/practical_test_fabian_melgarejo.git>
+   git clone https://github.com/fabianbm15/practical_test_fabian_melgarejo.git
    ```
 
 2. **Navega hasta el directorio del proyecto:**
