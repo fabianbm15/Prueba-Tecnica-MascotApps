@@ -1,30 +1,6 @@
 # Mascotapps
 
-Este es el proyecto Mascotapps, una aplicación desarrollada con [React](https://es.reactjs.org/) y [Vite](https://vitejs.dev/). Mascotapps es una plataforma en la que podrás adquirir placas para que siempre ubiques a tus mascotas.
+![Uploading image.png…]()
 
-## Instalación
+Mascotapps es una página realizada con JavaScript y React, consistió en una prueba técnica en donde a partir de un diseño dado por la empresa se realizó la página web.
 
-1. **Clona el repositorio:**
-
-   ```
-   git clone https://github.com/fabianbm15/practical_test_fabian_melgarejo.git
-   ```
-
-2. **Navega hasta el directorio del proyecto:**
-
-   ```
-   cd practical_test_fabian_melgarejo
-   ```
-
-3. **Instala las dependencias:**
-   ```
-   npm install
-   ```
-
-## Uso
-
-1. **Inicia el servidor de desarrollo:**
-   ```
-   npm run dev
-   ```
-2. **Abre tu navegador y ve a `http://localhost:5173` para ver la aplicación en acción.**
