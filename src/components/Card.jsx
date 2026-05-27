@@ -1,4 +1,5 @@
 import backgroundNumber from "../assets/background_number.svg";
+import PropTypes from 'prop-types';
 import "./style.css";
 
 export default function Card(props) {
@@ -21,3 +22,10 @@ export default function Card(props) {
     </>
   );
 }
+
+Card.propTypes = {
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
