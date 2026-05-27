@@ -4,6 +4,12 @@
   box-shadow: 0px 3px 6px #00000029;
 }
 
+.navBar a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease-in-out;
+}
+
 #containerNavBar {
   min-height: 72px;
   display: flex;
@@ -26,31 +32,52 @@
   width: 592px;
 }
 
-#buttonsNavBar button {
+.navLink {
   margin: auto;
   cursor: pointer;
   width: 148px;
   height: 36px;
   font: normal normal 600 16px/24px Red Hat Display;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
-#noBackgrounButton {
+.noBackgroundButton {
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
+  color: #606060;
+  transition: all 0.3s ease-in-out;
 }
 
-#loginButton {
+.noBackgroundButton:hover {
+  color: #32a4de;
+}
+
+.loginButton {
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
   color: #32a4de;
   font: normal normal bold 16px/24px Red Hat Display;
+  transition: all 0.3s ease-in-out;
 }
 
-#signupButton {
+.loginButton:hover {
+  color: #0a5f8e;
+}
+
+.signupButton {
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #32a4de;
   border-radius: 18px;
   color: #32a4de;
+  transition: all 0.3s ease-in-out;
+}
+
+.signupButton:hover {
+  background: #32a4de;
+  color: #ffffff;
 }
 
 .navBarMobile {
@@ -73,12 +100,21 @@
   padding: 10px 0px;
 }
 
-#menuMobile button {
+#menuMobile a {
   margin: auto;
   cursor: pointer;
   width: 148px;
   height: 36px;
   font: normal normal 600 16px/24px Red Hat Display;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+#menuMobile a:hover {
+  background: rgba(50, 164, 222, 0.1);
 }
 
 /* ************* Banner ************* */
@@ -140,6 +176,11 @@
   letter-spacing: 0px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#buyIdTag:hover {
+  background: #0a5f8e;
 }
 
 #haveIdTag {
@@ -153,6 +194,11 @@
   letter-spacing: 0px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#haveIdTag:hover {
+  background: #0a5f8e;
 }
 
 /* ************* Info ************* */
@@ -182,7 +228,7 @@
 }
 
 /* ************* Card ************* */
-#card {
+.card {
   margin: auto;
   position: relative;
   width: 370px;
@@ -194,11 +240,11 @@
   flex-direction: column;
 }
 
-#numbersCardInfo {
+.numbersCardInfo {
   position: absolute;
 }
 
-#circleCardNumber {
+.circleCardNumber {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,13 +256,13 @@
   margin-left: 19px;
 }
 
-#circleCardNumber img {
+.circleCardNumber img {
   display: block;
   margin: 0 auto;
   filter: brightness(40%);
 }
 
-#numberCard {
+.numberCard {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -228,18 +274,18 @@
   color: #ffffff;
 }
 
-#contentCardInfo {
+.contentCardInfo {
   padding: 48px 37px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#imageContentCard {
+.imageContentCard {
   height: 72px;
 }
 
-#h3ContentCard {
+.h3ContentCard {
   margin-top: 18px;
   margin-bottom: 12px;
   text-align: center;
@@ -248,7 +294,7 @@
   color: #0d3c54;
 }
 
-#pContentCard {
+.pContentCard {
   margin-top: 0px;
   text-align: center;
   font: normal normal 600 18px/24px Red Hat Display;
@@ -273,7 +319,7 @@
   margin-bottom: 48px;
 }
 
-#faqQuestionAnswer {
+.faqQuestionAnswer {
   width: 900px;
   min-height: 60px;
   background: #ffffff 0% 0% no-repeat padding-box;
@@ -283,15 +329,30 @@
   cursor: pointer;
 }
 
-#divFaqTile {
+.divFaqTile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-#answerFaqs {
+.answerFaqs {
+  margin: 0;
   padding-bottom: 18px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease-in-out;
+}
+
+.answerFaqs[data-state="open"] {
+  max-height: 500px;
+  opacity: 1;
+  padding-bottom: 18px;
+}
+
+.answerFaqs[data-state="closed"] {
+  padding-bottom: 0;
 }
 
 /* ************* Contact ************* */
@@ -355,6 +416,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  gap: 18px;
 }
 
 #inputContact input {
@@ -375,8 +437,8 @@
   font: normal normal normal 12px Red Hat Display;
   color: rgb(0, 0, 0);
   position: absolute;
-  top: 35px;
   left: 5px;
+  bottom: -16px;
 }
 
 #divInputText {
@@ -405,7 +467,7 @@
   font: normal normal normal 12px Red Hat Display;
   color: rgb(0, 0, 0);
   position: absolute;
-  top: 68px;
+  bottom: -16px;
   left: 5px;
 }
 
@@ -421,6 +483,17 @@
   letter-spacing: 0px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#sendContactButton:hover:not(:disabled) {
+  background: #0a5f8e;
+}
+
+#sendContactButton:disabled {
+  background: #b3d9ef;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 #backgroundAlert {
@@ -479,10 +552,24 @@
   letter-spacing: 0px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#closeButtonContact:hover:not(:disabled) {
+  background: #0a5f8e;
+}
+
+#closeButtonContact:disabled {
+  background: #b3d9ef;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .notificationsAndPromoteApp {
-  height: 371px;
+  min-height: 371px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 /* ************* Notifications ************* */
@@ -493,6 +580,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 }
 
 #divTitleNotifications {
@@ -536,13 +624,22 @@
   font: normal normal 600 16px/20px Red Hat Display;
   letter-spacing: 0px;
   color: #ffffff;
-}
-
-#buttonSubscribe {
+  
   position: absolute;
   cursor: pointer;
   top: 18px;
   right: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+#buttonSubscribe:hover:not(:disabled) {
+  background: #0a5f8e;
+}
+
+#buttonSubscribe:disabled {
+  background: #b3d9ef;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 #errorEmailNotification {
@@ -572,7 +669,9 @@
 }
 
 #divLogosApps img {
-  cursor: pointer;
+  cursor: auto;
+  transition: all 0.3s ease-in-out;
+  filter: brightness(100%);
 }
 
 /* ************* Footer ************* */
@@ -597,11 +696,8 @@
   margin-bottom: -10px;
 }
 
-#pInfoFooter {
-  cursor: auto;
-}
-
-#footerHyperlinks p {
+.footer p,
+.footer a {
   text-align: left;
   font: normal normal medium 8px/16px Red Hat Display;
   letter-spacing: 0px;
@@ -609,8 +705,18 @@
   margin-bottom: -4px;
 }
 
-#pLinkFooter {
+.footer a {
+  text-decoration: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: #32a4de;
+}
+
+#pInfoFooter {
+  cursor: auto;
 }
 
 #divFooter1 {
@@ -619,10 +725,28 @@
 
 #divFooter2 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#divFooter2 section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #divFooter3 {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#divFooter3 section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #divFooter4 {
@@ -637,6 +761,15 @@
   flex-direction: row;
   justify-content: space-between;
   cursor: pointer;
+}
+
+#imagesFooter img {
+  transition: all 0.3s ease-in-out;
+  filter: brightness(100%);
+}
+
+#imagesFooter img:hover {
+  filter: brightness(120%);
 }
 
 #copyRightFooter {
@@ -665,7 +798,7 @@
     grid-template-columns: repeat(2, 1fr);
     max-width: 800px;
   }
-  #card {
+  .card {
     margin-bottom: 20px;
   }
 }
@@ -708,7 +841,7 @@
   #divfaqQuestionAnswer {
     width: 90%;
   }
-  #faqQuestionAnswer {
+  .faqQuestionAnswer {
     width: auto;
   }
   .contact {
@@ -716,9 +849,6 @@
   }
   #pContact {
     min-width: 500px;
-  }
-  .notificationsAndPromoteApp {
-    width: 100%;
   }
   .notifications {
     padding: 0px 10px;
@@ -748,7 +878,7 @@
   #menuMobile {
     border-top: 1px solid rgba(134, 134, 134, 0.363);
   }
-  #menuMobile button {
+  #menuMobile .navLink {
     width: auto;
     min-width: 250px;
   }
@@ -785,7 +915,7 @@
   #cards {
     grid-template-columns: repeat(1, 1fr);
   }
-  #card {
+  .card {
     width: 340px;
     height: 300px;
   }
@@ -819,6 +949,7 @@
   .notificationsAndPromoteApp {
     height: auto;
     min-height: 400px;
+    padding: 50px 20px;
   }
   .notifications {
     padding: 0px 10px;
@@ -840,33 +971,33 @@
     margin-top: 0px;
   }
   #footerHyperlinks {
-    padding: 40px 10px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   #divFooter1 {
-    width: 80%;
+    width: 100%;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: left;
   }
   #divFooter2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 30px;
   }
   #divFooter3 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 30px;
   }
   #divFooter4 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
+    align-items: flex-start;
+    margin-bottom: 0px;
   }
   #alertSubmit {
     width: 80%;
@@ -882,7 +1013,7 @@
   #petsImageBanner {
     width: 70%;
   }
-  #card {
+  .card {
     width: 300px;
     height: 330px;
   }
@@ -892,7 +1023,6 @@
   }
   #divContactForm {
     min-width: 0px;
-    max-width: 240px;
   }
 
   #contactFirstLine {
@@ -911,8 +1041,9 @@
     width: auto;
   }
   #divLogosApps {
-    width: 240px;
-    flex-direction: column;
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
   }
   #divLogosApps img {
     width: 150px;

@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../assets/logo.svg";
 import twitterImage from "../assets/twitter.svg";
 import facebookImage from "../assets/facebook.svg";
@@ -28,7 +27,7 @@ export default function Footer() {
         <div id="footerHyperlinks">
           <div id="divFooter1">
             <img src={logo} alt="mascotapps.svg" />
-            <p id="pInfoFooter">
+            <p>
               La solución definitiva para identificar y encontrar su mascota.
               Con Mascotapps, escaneas, conecta y proteges a tus compañeros
               peludos.
@@ -36,23 +35,27 @@ export default function Footer() {
           </div>
           <div id="divFooter2">
             <h6>Mascotapps</h6>
-            <p id="pLinkFooter" onClick={scrollToHome}>
-              Inicio
-            </p>
-            <p id="pLinkFooter" onClick={scrollToInfo}>
-              ¿Cómo funciona?
-            </p>
-            <p id="pLinkFooter" onClick={scrollToContact}>
-              Contáctenos
-            </p>
-            <p id="pLinkFooter">Regístrate</p>
+            <section>
+              <a className="footerLink" onClick={scrollToHome} href="#">
+                Inicio
+              </a>
+              <a className="footerLink" onClick={scrollToInfo} href="#">
+                ¿Cómo funciona?
+              </a>
+              <a className="footerLink" onClick={scrollToContact} href="#">
+                Contáctenos
+              </a>
+              <a className="footerLink" href="#">Regístrate</a>
+            </section>
           </div>
           <div id="divFooter3">
             <h6>De interés</h6>
-            <p id="pLinkFooter">Veterinarias</p>
-            <p id="pLinkFooter">Guía médica</p>
-            <p id="pLinkFooter">Alianzas</p>
-            <p id="pLinkFooter">Referidos</p>
+            <section>
+              <a className="footerLink" href="#">Veterinarias</a>
+              <a className="footerLink" href="#">Guía médica</a>
+              <a className="footerLink" href="#">Alianzas</a>
+              <a className="footerLink" href="#">Referidos</a>
+            </section>
           </div>
           <div id="divFooter4">
             <h6>Nos encuentras en</h6>

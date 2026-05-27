@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { validateContact } from "./validate";
 import "./style.css";
@@ -29,6 +28,9 @@ export default function Contact() {
   });
 
   const hasErrors = Object.values(errors).some((value) => value !== "");
+  const hasEmptyFields = Object.values(contactData)
+    .slice(0, 5)
+    .some((value) => value === "");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -111,9 +113,9 @@ export default function Contact() {
                         handleChange(e);
                       }}
                     />
-                    <p id="errors">
+                    <span id="errors">
                       {contactData.touched.firstName ? errors.firstName : null}
-                    </p>
+                    </span>
                   </div>
                   <div id="inputContact">
                     <input
@@ -125,9 +127,9 @@ export default function Contact() {
                         handleChange(e);
                       }}
                     />
-                    <p id="errors">
+                    <span id="errors">
                       {contactData.touched.lastName ? errors.lastName : null}
-                    </p>
+                    </span>
                   </div>
                 </div>
 
@@ -142,9 +144,9 @@ export default function Contact() {
                         handleChange(e);
                       }}
                     />
-                    <p id="errors">
+                    <span id="errors">
                       {contactData.touched.number ? errors.number : null}
-                    </p>
+                    </span>
                   </div>
                   <div id="inputContact">
                     <input
@@ -156,9 +158,9 @@ export default function Contact() {
                         handleChange(e);
                       }}
                     />
-                    <p id="errors">
+                    <span id="errors">
                       {contactData.touched.email ? errors.email : null}
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -172,16 +174,20 @@ export default function Contact() {
                     handleChange(e);
                   }}
                 />
-                <p id="errorsText">
+                <span id="errorsText">
                   {contactData.touched.message ? errors.message : null}
-                </p>
+                </span>
               </div>
             </div>
             <div>
               <button
                 id="sendContactButton"
+                disabled={hasErrors || hasEmptyFields}
                 onClick={(e) => {
                   showErrors(e);
+                  if (!hasErrors && !hasEmptyFields) {
+                    handleSubmit(e);
+                  }
                 }}
               >
                 Enviar

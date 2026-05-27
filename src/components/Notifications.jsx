@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import mailIcon from "../assets/mail_icon.svg";
 import { validateEmail } from "./validate";
@@ -103,6 +102,7 @@ export default function Notifications() {
             <div>
               <button
                 id="buttonSubscribe"
+                disabled={hasErrorNotification || !emailContact.email}
                 onClick={(e) => {
                   showErrors(e);
                 }}

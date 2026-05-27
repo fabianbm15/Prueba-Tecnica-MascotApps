@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import logo from "../assets/logo.svg";
 import menuImage from "../assets/menu.svg";
 import { animateScroll } from "react-scroll";
@@ -27,14 +27,14 @@ export default function NavBar() {
         <div id="containerNavBar">
           <img id="logoNavBar" src={logo} alt="mascotapps.svg" />
           <div id="buttonsNavBar">
-            <button id="noBackgrounButton" onClick={scrollToInfo}>
+            <a className="navLink noBackgroundButton" onClick={scrollToInfo} href="#">
               ¿Cómo funciona?
-            </button>
-            <button id="noBackgrounButton" onClick={scrollToContact}>
+            </a>
+            <a className="navLink noBackgroundButton" onClick={scrollToContact} href="#">
               Contacto
-            </button>
-            <button id="loginButton">Iniciar Sesión</button>
-            <button id="signupButton">Registrarse</button>
+            </a>
+            <a className="navLink loginButton" href="#">Iniciar Sesión</a>
+            <a className="navLink signupButton" href="#">Registrarse</a>
           </div>
           <div className="navBarMobile">
             <img
@@ -47,14 +47,14 @@ export default function NavBar() {
         </div>
         {showMenu ? (
           <div id="menuMobile">
-            <button id="noBackgrounButton" onClick={scrollToInfo}>
+            <a className="navLink noBackgroundButton" onClick={scrollToInfo} href="#">
               ¿Cómo funciona?
-            </button>
-            <button id="noBackgrounButton" onClick={scrollToContact}>
+            </a>
+            <a className="navLink noBackgroundButton" onClick={scrollToContact} href="#">
               Contacto
-            </button>
-            <button id="loginButton">Iniciar Sesión</button>
-            <button id="signupButton">Registrarse</button>
+            </a>
+            <a className="navLink loginButton" href="#">Iniciar Sesión</a>
+            <a className="navLink signupButton" href="#">Registrarse</a>
           </div>
         ) : null}
       </div>

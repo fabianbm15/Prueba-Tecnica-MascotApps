@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import "./style.css";
 
@@ -41,16 +40,20 @@ export default function Faq() {
             return (
               <div
                 key={key}
-                id="faqQuestionAnswer"
+                className="faqQuestionAnswer"
                 onClick={() => handleClick(faq.q)}
               >
-                <div id="divFaqTile">
+                <div className="divFaqTile">
                   <h4>{faq.q}</h4>
                   {currentQuestion === faq.q ? <p>-</p> : <p>+</p>}
                 </div>
-                {currentQuestion === faq.q ? (
-                  <p id="answerFaqs">{faq.a}</p>
-                ) : null}
+                <p
+                  className="answerFaqs"
+                  role={currentQuestion === faq.q ? "open" : "closed"}
+                  data-state={currentQuestion === faq.q ? "open" : "closed"}
+                >
+                  {faq.a}
+                </p>
               </div>
             );
           })}

@@ -1,7 +1,8 @@
 const regexName = /^[\p{L}\s]+$/u; // Cadena de texto con espacios, hasta 55 caractéres
-const regexEmail = /^\S+@\S+\.\S+$/; // formato email
 const regexNumber = /^[0-9]+$/; // Números
 const regexText = /^[\p{L}\s.,;()0-9]+$/u; // Cadena de texto con espacios
+
+const robustEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
 export function validateContact(inputs) {
   const errors = {};
@@ -24,7 +25,7 @@ export function validateContact(inputs) {
 
   if (!inputs.email) {
     errors.email = "El correo electrónico no puede estar vacío.";
-  } else if (!regexEmail.test(inputs.email)) {
+  } else if (!robustEmailRegex.test(inputs.email)) {
     errors.email = "Formato de correo electrónico inválido.";
   } else if (inputs.email.length > 254) {
     errors.email = "El E-Mail no puede tener más de 254 caracteres.";
@@ -55,7 +56,7 @@ export function validateEmail(inputs) {
 
   if (!inputs.email) {
     errors.email = "El correo electrónico no puede estar vacío.";
-  } else if (!regexEmail.test(inputs.email)) {
+  } else if (!robustEmailRegex.test(inputs.email)) {
     errors.email = "Formato de correo electrónico inválido.";
   } else if (inputs.email.length > 254) {
     errors.email = "El E-Mail no puede tener más de 254 caracteres.";
